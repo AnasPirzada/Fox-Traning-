@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Helvetica-Bold';
+  src: url('/public/Font/Helvetica-Bold-Font.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helvetica-Light';
+  src: url('/public/Font/Helvetica Light Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica-Regular';
+  src: url('/public/Font/Helvetica Regular.otf') format('opentype');
+}
+
+
+.Helvetica-Bold {
+  font-family: 'Helvetica-Bold', sans-serif;
+}
+
+.Helvetica-Light {
+  font-family: 'Helvetica-Light', sans-serif;
+}
+
+.Helvetica-Regular {
+  font-family: 'Helvetica-Regular', sans-serif;
+}
+
+.color {
+  color: #FF2800;
+
+}

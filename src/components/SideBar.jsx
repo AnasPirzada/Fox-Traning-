@@ -1,37 +1,37 @@
-import { MotionConfig, motion } from 'framer-motion';
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { MotionConfig, motion } from "framer-motion";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const menuItems = [
   {
-    name: 'Dashboard',
-    route: '/dashboard',
-    activeLogo: '/Capa_1.svg',
-    inactiveLogo: '/Capa_1 (1).svg',
+    name: "Dashboard",
+    route: "/dashboard",
+    activeLogo: "/Capa_1.svg",
+    inactiveLogo: "/Capa_1 (1).svg",
   },
   {
-    name: 'Users',
-    route: '/users',
-    activeLogo: '/public/solar_user-linear (1).svg',
-    inactiveLogo: '/public/solar_user-linear.svg',
+    name: "Users",
+    route: "/users",
+    activeLogo: "/public/solar_user-linear (1).svg",
+    inactiveLogo: "/public/solar_user-linear.svg",
   },
   {
-    name: 'Program',
-    route: '/Program',
-    activeLogo: '/_30-Report (1).svg',
-    inactiveLogo: ' /_30-Report.svg',
+    name: "Program",
+    route: "/Program",
+    activeLogo: "/_30-Report (1).svg",
+    inactiveLogo: " /_30-Report.svg",
   },
   {
-    name: 'Tab',
-    route: '/tab',
-    activeLogo: '/Frame_active(1).svg',
-    inactiveLogo: '/Frame_active.svg',
+    name: "Tab",
+    route: "/tab",
+    activeLogo: "/Frame_active(1).svg",
+    inactiveLogo: "/Frame_active.svg",
   },
   {
-    name: 'Logout',
-    route: '/Logout',
-    activeLogo: '/Group.svg',
-    inactiveLogo: '/solar_logout-2-broken.svg',
+    name: "Logout",
+    route: "/Logout",
+    activeLogo: "/Group.svg",
+    inactiveLogo: "/solar_logout-2-broken.svg",
   },
 ];
 
@@ -40,75 +40,77 @@ const SideBar = () => {
 
   return (
     <div>
+      {/* Mobile Hamburger Button */}
       <button
-        onClick={() => setActive(prev => !prev)}
-        type='button'
-        className='inline-flex items-center p-2 mt-2 me-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400'
+        onClick={() => setActive((prev) => !prev)}
+        type="button"
+        className="inline-flex items-center  mt-2 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
         style={{
-          color:"red",
-          position: 'fixed',
-          right: '10px',
-          top: '10px',
+          backgroundColor: "",
+          position: "fixed",
+          right: "10px",
+          top: "10px",
         }}
       >
         <MotionConfig
           transition={{
             duration: 0.5,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
         >
           <motion.button
             initial={false}
-            animate={active ? 'open' : 'closed'}
-            className='relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20'
+            animate={active ? "open" : "closed"}
+            className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
           >
             <motion.span
               variants={VARIANTS.top}
-              className='absolute h-1 w-10 bg-white'
-              style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
+              className="absolute h-1 w-10 bg-[#FF2800]"
+              style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
             />
             <motion.span
               variants={VARIANTS.middle}
-              className='absolute h-1 w-10 bg-white'
-              style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
+              className="absolute h-1 w-10 bg-[#FF2800]"
+              style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
             />
             <motion.span
               variants={VARIANTS.bottom}
-              className='absolute h-1 w-5 bg-white'
+              className="absolute h-1 w-5 bg-[#FF2800]"
               style={{
-                x: '-50%',
-                y: '50%',
-                bottom: '35%',
-                left: 'calc(50% + 10px)',
+                x: "-50%",
+                y: "50%",
+                bottom: "35%",
+                left: "calc(50% + 10px)",
               }}
             />
           </motion.button>
         </MotionConfig>
       </button>
 
+      {/* Sidebar */}
       <aside
-        id='default-sidebar'
-        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
-          active ? 'translate-x-0' : '-translate-x-full'
+        id="default-sidebar"
+        className={`fixed top-0 inset-0 bg-white left-0 z-40 w-64 h-screen transition-transform ${
+          active ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`}
-        aria-label='Sidebar'
+        aria-label="Sidebar"
       >
         <div
-          className='h-full px-3 py-4 overflow-y-auto bg-transparent shadow-lg'
-          style={{ borderRadius: '0px 40px 0px 0px' }}
+          className="h-full px-3 py-4 overflow-y-auto bg-transparent shadow-lg"
+          style={{ borderRadius: "0px 40px 0px 0px" }}
         >
-          <ul className='space-y-2 font-medium mt-16'>
-            <div className='flex justify-center items-center mb-16'>
-              <img src='/logo.svg' alt='' />
+          <ul className="space-y-2 font-medium mt-16">
+            <div className="flex justify-center items-center mb-16">
+              <img src="/logo.svg" alt="" />
             </div>
-            {menuItems.map(item => (
-              <li key={item.route}  style={{ padding: '0px 16px 0px 16px' }}>
+            {menuItems.map((item) => (
+              <li key={item.route} style={{ padding: "0px 16px 0px 16px" }}>
                 <NavLink
                   to={item.route}
                   className={({ isActive }) =>
                     isActive
-                      ? 'flex items-center my-4 p-2 rounded-lg text-[#FF2800] bg-[#FF28001A] group'
-                      : 'flex items-center my-4 p-2 rounded-lg text-[#7E7E7E] hover:bg-gray-100 hover:text-[#7E7E7E] dark:hover:bg-[#FF28001A] group'
+                      ? "flex items-center my-4 p-2 rounded-lg text-[#FF2800] bg-[#FF28001A] group"
+                      : "flex items-center my-4 p-2 rounded-lg text-[#7E7E7E] hover:bg-gray-100 hover:text-[#7E7E7E] dark:hover:bg-[#FF28001A] group"
                   }
                 >
                   {({ isActive }) => (
@@ -117,7 +119,7 @@ const SideBar = () => {
                         src={isActive ? item.activeLogo : item.inactiveLogo}
                         alt={`${item.name} logo`}
                       />
-                      <span className='ms-3'>{item.name}</span>
+                      <span className="ms-3">{item.name}</span>
                     </>
                   )}
                 </NavLink>
@@ -133,32 +135,32 @@ const SideBar = () => {
 const VARIANTS = {
   top: {
     open: {
-      rotate: ['0deg', '0deg', '45deg'],
-      top: ['35%', '50%', '50%'],
+      rotate: ["0deg", "0deg", "45deg"],
+      top: ["35%", "50%", "50%"],
     },
     closed: {
-      rotate: ['45deg', '0deg', '0deg'],
-      top: ['50%', '50%', '35%'],
+      rotate: ["45deg", "0deg", "0deg"],
+      top: ["50%", "50%", "35%"],
     },
   },
   middle: {
     open: {
-      rotate: ['0deg', '0deg', '-45deg'],
+      rotate: ["0deg", "0deg", "-45deg"],
     },
     closed: {
-      rotate: ['-45deg', '0deg', '0deg'],
+      rotate: ["-45deg", "0deg", "0deg"],
     },
   },
   bottom: {
     open: {
-      rotate: ['0deg', '0deg', '45deg'],
-      bottom: ['35%', '50%', '50%'],
-      left: '50%',
+      rotate: ["0deg", "0deg", "45deg"],
+      bottom: ["35%", "50%", "50%"],
+      left: "50%",
     },
     closed: {
-      rotate: ['45deg', '0deg', '0deg'],
-      bottom: ['50%', '50%', '35%'],
-      left: 'calc(50% + 10px)',
+      rotate: ["45deg", "0deg", "0deg"],
+      bottom: ["50%", "50%", "35%"],
+      left: "calc(50% + 10px)",
     },
   },
 };

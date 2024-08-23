@@ -10,7 +10,7 @@ const Graph = () => {
 
   const [options, setOptions] = useState({
     chart: {
-      height: 250,
+      height: 'auto', // Makes height responsive
       type: 'bar',
       toolbar: {
         show: false,
@@ -126,7 +126,7 @@ const Graph = () => {
       },
     },
     annotations: {
-      yaxis: series[0].data.map(value => ({
+      yaxis: series[0].data.map((value) => ({
         y: value,
         marker: {
           size: 6,
@@ -134,41 +134,24 @@ const Graph = () => {
           strokeColor: '#fff',
           strokeWidth: 2,
           shape: 'circle',
-          shadow: {
-            enabled: false,
-            top: 3,
-            left: 0,
-            blur: 5,
-            color: '#FF280066',
-            opacity: 0.1,
-          },
         },
       })),
     },
   });
 
   return (
-    <div className='rounded-2xl border-[#F5F5F5] border bg-white w-[654px] h-[398px] p-6'>
-      <div className='flex justify-between items-center mb-4'>
-        <p className='text-xl font-semibold'>Top Wins Users</p>
-        <p className='flex items-center text-gray-500'>
-          Month <img className='ml-2' src='/down.svg' alt='Month Dropdown' />
+    <div className="rounded-2xl border-[#F5F5F5] border bg-white p-4 md:p-6">
+      <div className="flex justify-between items-center mb-4">
+        <p className="text-lg md:text-xl font-semibold">Top Wins Users</p>
+        <p className="flex items-center text-gray-500">
+          Month <img className="ml-2" src="/down.svg" alt="Month Dropdown" />
         </p>
       </div>
-      <ReactApexChart
-        options={options}
-        series={series}
-        type='bar'
-        height={250}
-      />
-      <div className='flex justify-around me-1 w-[90%] mx-auto'>
+      <ReactApexChart options={options} series={series} type="bar" height="auto" />
+      <div className="flex justify-around mt-4 w-full">
         {options.xaxis.categories.map((cat, index) => (
-          <div key={index} className='flex flex-col items-center'>
-            <img
-              src={cat.image}
-              alt={cat.name}
-              className='w-10 h-10 rounded-full'
-            />
+          <div key={index} className="flex flex-col items-center">
+            <img src={cat.image} alt={cat.name} className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
           </div>
         ))}
       </div>

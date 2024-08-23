@@ -40,15 +40,16 @@ const SideBar = () => {
 
   return (
     <div>
+      {/* Mobile Hamburger Button */}
       <button
         onClick={() => setActive(prev => !prev)}
         type='button'
-        className='inline-flex items-center p-2 mt-2 me-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400'
+        className='inline-flex items-center  mt-2 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200'
         style={{
-          backgroundColor: '#FF2800',
+          backgroundColor: '',
           position: 'fixed',
-          right: '10px',
-          top: '10px',
+          right: '0px',
+          top: '-20px',
         }}
       >
         <MotionConfig
@@ -64,17 +65,17 @@ const SideBar = () => {
           >
             <motion.span
               variants={VARIANTS.top}
-              className='absolute h-1 w-10 bg-white'
+              className='absolute h-1 w-10 bg-[#FF2800]'
               style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
             />
             <motion.span
               variants={VARIANTS.middle}
-              className='absolute h-1 w-10 bg-white'
+              className='absolute h-1 w-10 bg-[#FF2800]'
               style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
             />
             <motion.span
               variants={VARIANTS.bottom}
-              className='absolute h-1 w-5 bg-white'
+              className='absolute h-1 w-5 bg-[#FF2800]'
               style={{
                 x: '-50%',
                 y: '50%',
@@ -86,9 +87,10 @@ const SideBar = () => {
         </MotionConfig>
       </button>
 
+      {/* Sidebar */}
       <aside
         id='default-sidebar'
-        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+        className={`fixed top-0 inset-0 bg-white left-0 z-40 w-64 h-screen transition-transform ${
           active ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0`}
         aria-label='Sidebar'
@@ -102,7 +104,7 @@ const SideBar = () => {
               <img src='logo.svg' alt='' />
             </div>
             {menuItems.map(item => (
-              <li key={item.route}  style={{ padding: '0px 16px 0px 16px' }}>
+              <li key={item.route} style={{ padding: '0px 16px 0px 16px' }}>
                 <NavLink
                   to={item.route}
                   className={({ isActive }) =>

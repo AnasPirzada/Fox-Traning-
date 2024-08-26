@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/SideBar";
 import AddProgramModal from "./AddProgramModal";
+import { Link } from "react-router-dom";
 
 function Program() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -67,39 +68,43 @@ function Program() {
           </div>
           <div className="flex flex-col px-4">
             {programData.map((program, index) => (
-              <div
-                key={index}
-                className="flex flex-col md:flex-row justify-between p-4 w-full bg-white rounded-2xl shadow mb-4 relative"
-              >
-                <div className="flex justify-between items-center w-full md:w-[40%] mb-4 md:mb-0">
-                  <h1 className="text-sm md:text-base">{program.startDate}</h1>
-                  <h2 className="text-sm md:text-base">{program.title}</h2>
+              <Link to="/program/programdetails">
+                <div
+                  key={index}
+                  className="flex flex-col md:flex-row justify-between p-4 w-full bg-white rounded-2xl shadow mb-4 relative  cursor-pointer"
+                >
+                  <div className="flex justify-between items-center w-full md:w-[40%] mb-4 md:mb-0">
+                    <h1 className="text-sm md:text-base">
+                      {program.startDate}
+                    </h1>
+                    <h2 className="text-sm md:text-base">{program.title}</h2>
+                  </div>
+                  <div className="flex justify-end md:justify-center cursor-pointer relative">
+                    <img
+                      src="/iconamoon_menu-kebab-vertical-bold.png"
+                      alt="Menu"
+                      className="h-5 w-5 md:h-6 md:w-6"
+                      onClick={() => toggleDropdown(index)}
+                    />
+                    {dropdownOpen === index && (
+                      <div className="absolute right-0 mt-6 w-40 bg-white rounded-lg shadow-lg z-50">
+                        <button
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          onClick={() => handleEdit(index)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          onClick={() => handleDelete(index)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="flex justify-end md:justify-center cursor-pointer relative">
-                  <img
-                    src="/iconamoon_menu-kebab-vertical-bold.png"
-                    alt="Menu"
-                    className="h-5 w-5 md:h-6 md:w-6"
-                    onClick={() => toggleDropdown(index)}
-                  />
-                  {dropdownOpen === index && (
-                    <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-50">
-                      <button
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => handleEdit(index)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => handleDelete(index)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -101,7 +101,7 @@ const SideBar = () => {
         >
           <ul className='space-y-2 font-medium mt-16'>
             <div className='flex justify-center items-center mb-16'>
-              <img src='logo.svg' alt='' />
+              <img src='/logo.svg' alt='' />
             </div>
             {menuItems.map(item => (
               <li key={item.route} style={{ padding: '0px 16px 0px 16px' }}>

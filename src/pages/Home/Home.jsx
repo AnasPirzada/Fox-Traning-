@@ -1,6 +1,5 @@
 import React from "react";
 import SideBar from "../../components/SideBar";
-import Graph from "../../components/Graph";
 import RecentAchievements from "./RecentAchievements";
 import TopWinsUsersChart from "./TopWinsUsersChart";
 import UsersWorkoutTable from "./UsersWorkoutTable";

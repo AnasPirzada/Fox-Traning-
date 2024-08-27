@@ -22,8 +22,8 @@ const menuItems = [
     inactiveLogo: ' /_30-Report.svg',
   },
   {
-    name: 'Exercise',
-    route: '/Exercise',
+    name: 'Tab',
+    route: '/tab',
     activeLogo: '/Frame_active(1).svg',
     inactiveLogo: '/Frame_active.svg',
   },
@@ -45,7 +45,7 @@ const SideBar = () => {
         type='button'
         className='inline-flex items-center p-2 mt-2 me-3 text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400'
         style={{
-          backgroundColor: '#FF2800',
+          color:"red",
           position: 'fixed',
           right: '10px',
           top: '10px',

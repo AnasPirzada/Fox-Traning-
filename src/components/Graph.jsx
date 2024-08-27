@@ -4,7 +4,7 @@ import ReactApexChart from 'react-apexcharts';
 const Graph = () => {
   const [series, setSeries] = useState([
     {
-      data: [80, 150, 100, 80, 120, 50, 60, 90],
+      data: [200, 250, 180, 130, 160, 90, 120, 150],
     },
   ]);
 
@@ -18,10 +18,10 @@ const Graph = () => {
     },
     plotOptions: {
       bar: {
-        columnWidth: '40%',
-        distributed: false,
-        borderRadius: 10,
-        endingShape: 'rounded',
+        columnWidth: '30%',
+        borderRadius: 5,
+        endingShape: 'flat',
+        distributed: true,
       },
     },
     dataLabels: {
@@ -30,43 +30,36 @@ const Graph = () => {
     xaxis: {
       categories: [
         {
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          name: 'K',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
           name: 'User 2',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
-          name: 'User 3',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          name: 'L',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
-          name: 'User 4',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          name: 'P',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
           name: 'User 5',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
           name: 'User 6',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
-          name: 'User 7',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          name: 'H',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
           name: 'User 8',
-          image:
-            'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+          image: 'https://images.unsplash.com/photo-1552320853-b14fa736e4c0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
       ],
       labels: {
@@ -92,11 +85,11 @@ const Graph = () => {
       gradient: {
         shade: 'light',
         type: 'vertical',
-        shadeIntensity: 0.25,
+        shadeIntensity: 0.5,
         gradientToColors: ['#FF2800'],
         inverseColors: false,
-        opacityFrom: 0.7,
-        opacityTo: 0.5,
+        opacityFrom: 0.8,
+        opacityTo: 0.6,
         stops: [0, 90, 100],
       },
     },
@@ -109,39 +102,15 @@ const Graph = () => {
         size: 10,
       },
     },
-    stroke: {
-      show: false,
-      width: 4,
-      colors: ['#FF2800'],
-    },
-    tooltip: {
-      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-        const name = w.globals.labels[dataPointIndex].name;
-        const image = w.globals.labels[dataPointIndex].image;
-        return `<div style="padding:10px;text-align:center;">
-                  <img src="${image}" alt="${name}" style="width: 50px; height: 50px; border-radius: 50%;"/><br/>
-                  <span style="font-size: 14px;">${name}</span><br/>
-                  <span style="font-size: 14px;">Wins: ${series[seriesIndex][dataPointIndex]}</span>
-                </div>`;
-      },
-    },
     annotations: {
       yaxis: series[0].data.map(value => ({
         y: value,
         marker: {
-          size: 6,
-          fillColor: '#FF280066',
-          strokeColor: '#fff',
+          size: 8,
+          fillColor: '#FF2800',
+          strokeColor: '#FF2800',
           strokeWidth: 2,
           shape: 'circle',
-          shadow: {
-            enabled: false,
-            top: 3,
-            left: 0,
-            blur: 5,
-            color: '#FF280066',
-            opacity: 0.1,
-          },
         },
       })),
     },
@@ -169,6 +138,7 @@ const Graph = () => {
               alt={cat.name}
               className='w-10 h-10 rounded-full'
             />
+            <p className='text-sm text-center mt-1'>{cat.name}</p>
           </div>
         ))}
       </div>

@@ -2,13 +2,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Exercise from "./pages/Exercise.jsx";
-import Dashboard from "./pages/Home.jsx";
-import Logout from "./pages/Logout.jsx";
+import Dashboard from "./pages/Home/Home.jsx";
 import Program from "./pages/Program/Program.jsx";
 import Users from "./pages/Users/Users.jsx";
 import Login from "./pages/LoginPage/Login.jsx";
 import ProgramDetails from "./pages/Program/ProgramDetails.jsx";
+import Tab from "./pages/Tab/Tab.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -18,8 +17,8 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/program" element={<Program />} />
         <Route path="/program/programdetails" element={<ProgramDetails/>} />
-        <Route path="/Exercise" element={<Exercise />} />
-        <Route path="/Logout" element={<Logout />} />
+        <Route path="/tab" element={<Tab />} />
+
       </Routes>
     </BrowserRouter>
   );
